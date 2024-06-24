@@ -4,19 +4,19 @@ import boardgame.Position;
 
 public class ChessPosition {
 
-	private char colum;
+	private char column;
 	private int row;
 
-	public ChessPosition(char colum, int row) {
-		if (colum < 'a' || colum > 'h' || row < 1 || row > 8) {
+	public ChessPosition(char column, int row) {
+		if (column < 'a' || column > 'h' || row < 1 || row > 8) {
 			throw new ChessException("Erro estanciando ChessPosition...");
 		}
-		this.colum = colum;
+		this.column = column;
 		this.row = row;
 	}
 
 	public char getColum() {
-		return colum;
+		return column;
 	}
 
 	public int getRow() {
@@ -24,7 +24,7 @@ public class ChessPosition {
 	}
 
 	protected Position toPosition() {
-		return new Position(8 - row, colum - 'a');
+		return new Position(8 - row, column - 'a');
 	}
 
 	protected static ChessPosition fromPosition(Position position) {
@@ -33,6 +33,6 @@ public class ChessPosition {
 
 	@Override
 	public String toString() {
-		return "" + colum + row;
+		return "" + column + row;
 	}
 }
